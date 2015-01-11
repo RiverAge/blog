@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :login_require, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -19,12 +20,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+		redirect_to :root if !author_check(@post.user_id)
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+		@post.user_id = @current_user.id
 
     respond_to do |format|
       if @post.save
@@ -41,6 +44,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+			redirect_to :root if !author_check(@post.user_id)
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
@@ -69,6 +73,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params.require(:post).permit(:title, :content,)
     end
 end

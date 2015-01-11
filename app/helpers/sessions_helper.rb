@@ -14,6 +14,22 @@ module SessionsHelper
     !current_user.nil?
   end
 
+	def login_redirect
+		redirect_to session[:will_redirect] || :root
+		session.delete(:will_redirect)
+	end
+
+	def author_check(user_id)
+		@current_user && @current_user.id == user_id
+	end
+
+	def login_require
+	  if !login?
+			session[:will_redirect] = request.fullpath
+			redirect_to :login
+		end
+	end
+
   def logout
     if login?
       @current_user = nil

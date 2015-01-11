@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: email)
     if user && user.authenticate(session_params[:password])
       login user
-      redirect_to :root
+			login_redirect
     else
       render :new
     end
