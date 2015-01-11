@@ -28,6 +28,9 @@ module SessionsHelper
 			session[:will_redirect] = request.fullpath
 			redirect_to :login
 		end
+	def post_of_user(post)
+		user = User.find_by(id: post.user_id) if post
+		user.name if user
 	end
 
   def logout
