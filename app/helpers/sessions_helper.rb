@@ -20,7 +20,7 @@ module SessionsHelper
 	end
 
 	def author_check(user_id)
-		@current_user && @current_user.id == user_id
+		current_user && current_user.id == user_id
 	end
 
 	def login_require
