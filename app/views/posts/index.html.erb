@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
     <div class="row">
         <h2><%= link_to post.title, post_path(post) %></h2>
+            <h6 class="subheader"><%= post.updated_at %> By <%= post_of_user(post)%></h6>
         <%= post.content %>
    </div>
    <hr>

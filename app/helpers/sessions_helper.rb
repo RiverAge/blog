@@ -14,6 +14,11 @@ module SessionsHelper
     !current_user.nil?
   end
 
+	def post_of_user(post)
+		user = User.find_by(id: post.user_id) if post
+		user.name if user
+	end
+
   def logout
     if login?
       @current_user = nil
