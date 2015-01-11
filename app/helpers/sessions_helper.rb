@@ -28,6 +28,8 @@ module SessionsHelper
 			session[:will_redirect] = request.fullpath
 			redirect_to :login
 		end
+	end
+
 	def post_of_user(post)
 		user = User.find_by(id: post.user_id) if post
 		user.name if user
@@ -38,5 +40,6 @@ module SessionsHelper
       @current_user = nil
       session.delete(:user_id)
     end
-  end
+	end
+
 end
