@@ -1,7 +1,25 @@
+<div class="row"><h2>Log in</h2></div>
 <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :user %>
-    <%= f.text_field :email, placeholder: "email" %>
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder: "password" %>
-    <%= f.submit %>
+  <div class="row">
+    <div class="medium-1 columns">
+        <%= f.label :user, class: "inline" %>
+    </div>
+    <div class="medium-11 columns">
+      <%= f.text_field :email, placeholder: "email" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-1 columns">
+      <%= f.label :password, class: "inline" %>
+    </div>
+    <div class="medium-11 columns">
+      <%= f.password_field :password, placeholder: "password" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 medium-offset-1 column">
+       <%= f.submit class: "button" %>
+    </div>
+  </div>
 <% end %>

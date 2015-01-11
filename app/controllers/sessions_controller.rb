@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    logout
     redirect_to :root
   end
 
