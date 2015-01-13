@@ -1,41 +1,35 @@
 <%= form_for(@user) do |f| %>
-  <div class="row collapse">
-    <div class="medium-1 columns">
-      <span class="prefix">name</span>
-    </div>
-    <div class="medium-11 columns">
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
   </div>
 
-  <div class="row collapse">
-    <div class="medium-1 columns">
-      <span class="prefix">email</span>
-    </div>
-    <div class="medium-11 columns">
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.label :email %>
       <%= f.text_field :email %>
     </div>
   </div>
 
-  <div class="row collapse">
-    <div class="medium-1 columns">
-      <span class="prefix">password</span>
-    </div>
-    <div class="medium-11 columns">
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.label :passord %>
       <%= f.password_field :password %>
     </div>
   </div>
 
-  <div class="row collapse">
-    <div class="medium-1 columns">
-      <span class="prefix">Confirm</span>
-    </div>
-    <div class="medium-11 columns">
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
     </div>
   </div>
   <div class="row">
-    <%= f.submit class: "button", class: "button" %>
+    <div class="medium-12 columns">
+        <%= f.submit class: "button radius" %>
+    </div>
   </div>
 
 <% end %>
