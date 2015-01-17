@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $window = $(window)
 $title = $(".post-show-title")
+return if $title.length == 0
 titleHeight = $title.offset().top
 $window.scroll ->
 	scrollHeight = $window.scrollTop()
