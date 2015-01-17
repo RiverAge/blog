@@ -2,8 +2,8 @@
     <div class="row">
         <h2><%= post.title %></h2>
         <%= truncate(post.content, length: 300) %><br>
-          <h6 class="subheader"><%= post.updated_at %> By <%= post_of_user(post)%></h6>
-        <%= link_to "Read More", post_path(post) %>
+          <h6 class="subheader"><%= l post.updated_at, format: :short %> By <%= post_of_user(post)%></h6>
+        <%= link_to (t "Read More"), post_path(post) %>
    </div>
    <hr>
  <% end %>
