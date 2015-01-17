@@ -1,15 +1,15 @@
 <%= form_for(@post) do |f| %>
   <div class="row">
-    <%= f.label :title %>
+    <%= f.label :title, (t "title") %>
   </div>
   <div class="row">
-    <%= f.text_field :title, placeholder: "Title" %>
+    <%= f.text_field :title, placeholder:(t "title") %>
   </div>
   <div class="row">
-    <%= f.label :content %>
+    <%= f.label :content, (t "content") %>
   </div>
   <div class="row">
-    <%= f.text_area :content, placeholder: "Content", size: "10x20" %>
+    <%= f.text_area :content, placeholder: (t "content"), size: "10x20" %>
   </div>
   <div class="row">
       <%= f.submit class: "button radius"%>
