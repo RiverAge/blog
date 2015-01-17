@@ -1,5 +1,16 @@
-<h2 class="show-title"><%= @post.title %></h2>
+<div class="post-show-title">
+    <div class="row">
+        <h2 class="text-center"><%= @post.title %></h2>
+        <h5 class="subheader text-right">
+          <% if author_check(@post.user_id)%>
+            <%= link_to 'Edit', edit_post_path(@post) %> |
+          <% end %>
+            <%= link_to 'Back', posts_path %>
+        </h5>
+    </div>
+</div>
 <hr>
+
 <div class="row post-content">
   <%= @post.content %>
 </div>
