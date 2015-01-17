@@ -6,7 +6,6 @@ $title = $(".post-show-title")
 titleHeight = $title.offset().top
 $window.scroll ->
 	scrollHeight = $window.scrollTop()
-	console.log(scrollHeight);
 	if (titleHeight < scrollHeight)
 		$title.addClass("fixed-post-show-title");
 	else
