@@ -1,13 +1,10 @@
-
-<div class="row">
-  <h2><%= @post.title %></h2>
-</div>
+<h2 class="show-title"><%= @post.title %></h2>
 <hr>
 <div class="row post-content">
   <%= @post.content %>
 </div>
 <hr>
-<div class="row">
+<div class="row edit-and-back">
     <% if author_check(@post.user_id)%>
       <%= link_to 'Edit', edit_post_path(@post) %> |
     <% end %>

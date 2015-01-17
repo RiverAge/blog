@@ -2,3 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.show-title {
+	text-align: center;
+	width: 100%;
+	background-color: white;
+	transition: all 0.5 ease 0.1
+}
+
+.fix-show-title {
+	position: fixed;
+	margin-top: 0;
+	top: 0;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
