@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.0.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -11,8 +11,8 @@ group :development do
   gem "better_errors"
 end
 group :production do
-  gem 'rails_12factor'
-  gem 'pg'
+#  gem 'rails_12factor'
+  gem 'mysql2'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
